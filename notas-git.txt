@@ -1,0 +1,14 @@
+-Configurar la maquina
+git config --global user.name "_____" ------> entre comillas el usuario de git
+git config --global user.email ______ ------> correo de git
+
+-Trabajar con git
+rm -r ---> borrar directorio viejo
+git clone https.... ---> URL del repositorio de git
+
+-Trabajar archivos
+git add .
+git commit -m "___" --->comentario de commit
+git push
+
+
