@@ -1,14 +1,41 @@
--Configurar la maquina
+ Configurar la maquina
+=========================
 git config --global user.name "_____" ------> entre comillas el usuario de git
 git config --global user.email ______ ------> correo de git
 
--Trabajar con git
-rm -r ---> borrar directorio viejo
-git clone https.... ---> URL del repositorio de git
+ Trabajar con git
+=====================
+rm -r  ----> borrar directorio viejo
+git clone https...(URL del repositorio de git)...
 
--Trabajar archivos
-git add .
-git commit -m "___" --->comentario de commit
+--Subir archivos a git
+git add . ---> con el "." nos añade todos los cambios, para añadir un solo archivo
+                          en específico, solo escribimos el nombre del archivo
+git commit -m "___" ---> comentario de commit, puede ser una breve descripción de 
+                         las modificaciones hechas en el/los archivos
 git push
 
+Realizar los comandos en el orden mostrado, al final nos pedira usuario de GIT 
+y nuestro TOKEN/contraseña
 
+ Manual de vi
+===============
+Para abrir un nuevo archivo escribimos "vi nombre_del_archivo.terminación"
+Ejemplo:
+vi ejemplo_texto.txt
+Si ya existe dicho archivo y queremos abrirlo, volvemos a ejecutarla
+instrucción anteiror
+Comandos:
+
+esc -----> salir del modo escritura
+R   -----> modo escritura reemplazando
+i   -----> modo escritura insertando
+x   -----> borrado de letrs
+dd  -----> borrado de renglón
+D   -----> borrar a partir de ete punto
+o   -----> abrir renglón abajo
+O   -----> abrir renglón arriba
+:q  -----> salir
+:wq -----> guardar y salir
+:w  -----> guardar
+:q! -----> salir sin guardar
