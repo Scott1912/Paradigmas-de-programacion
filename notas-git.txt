@@ -18,7 +18,11 @@ git push
 Realizar los comandos en el orden mostrado, al final nos pedira usuario de GIT 
 y nuestro TOKEN/contraseña
 
- Manual de vi
+--Combinar archivos trabajados en diferentes maquinas:
+Dentro del repositorio ejecutar el siguiente comando:
+git pull origin --> esto descarga y fusiona los cambios del repositorio
+
+Manual de vi
 ===============
 Para abrir un nuevo archivo escribimos "vi nombre_del_archivo.terminación"
 Ejemplo:
