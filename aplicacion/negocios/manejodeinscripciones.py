@@ -12,9 +12,9 @@ class ManejoDeInscripciones:
     # ENVUALVE LA FUNCIÓN SIN LLAMAR VARIABLES LOCALES
     #======================================================
     @staticmethod
-    def inscribirUsuaio(usuario: Usuario, repositorioDeUsuarios: RepositoroDeUsuarios) -> None:
+    def inscribirUsuario(usuario: Usuario, repositorioDeUsuarios: RepositorioDeUsuarios) -> None:
         print("-----> Guardando usuario ... \n")
         repositorioDeUsuarios.abrir()
-        repositorioDeUsuarios.guardar()
+        repositorioDeUsuarios.guardar(usuario)
         repositorioDeUsuarios.cerrar()
 

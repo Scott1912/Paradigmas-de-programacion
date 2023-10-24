@@ -16,7 +16,7 @@ from aplicacion.repositorio.basededatos import BaseDeDatos
 # Del directorio aplicacion, el subdirectorio repositorio,
 # el archivo s3.py : trae el objeto S3
 #==========================================================
-from aplicacion.repositoro.s3 import S3
+from aplicacion.repositorio.s3 import S3
 
 #=====================================================================
 # Del directorrio aplicacion, el subdirectorio repositorio,
@@ -28,7 +28,7 @@ from aplicacion.repositorio.sistemadearchivos import SistemaDeArchivos
 # Del adirectorio aplicacion, el subdirectoro modelos,
 # el archivo usuario.py : trae el objeto Usuario
 #=============================================================
-from aplicacion.modelos.usario import Usuario
+from aplicacion.modelos.usuario import Usuario
 
 #============================================================================
 # Del directorio aplicacion, el subdirectorio negocios,
@@ -44,7 +44,7 @@ usuario = Usuario("Roberto","Jimenez",18)
 #========================
 # Crear el objeto s3
 #========================
-repositoroS3 = S3("321321321", "sdf324223", "MiCubeta")
+repositorioS3 = S3("321321321", "sdf324223", "MiCubeta")
 
 #================================================================
 # Interface inscribirUsuario del objeto ManejoDeInscripciones
