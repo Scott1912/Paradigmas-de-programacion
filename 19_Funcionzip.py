@@ -3,7 +3,7 @@
 #===============================
 # Paradigmas de Programación
 # Matemática Algorítmica
-# ESFM IPN Octubre 2023
+# ESFM IPN Noviembre 2023
 #===============================
 
 #=======================
