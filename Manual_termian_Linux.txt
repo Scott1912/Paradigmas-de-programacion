@@ -1,0 +1,14 @@
+ Copiar archivos
+==================
+cp _______________ _______________
+   objeto a copiar ruta de destino
+ejemplo:
+  cp archivo.txt /home/usuario/carpeta_de_destino
+
+--copiar varios archivos o carptetas:
+cp archivo1.txt texto1.txt texto2.txt /home/usuario/carpeta_de_destino/
+
+#Nota:
+ Puedes darle el nombre que quieras al archivo nuevo de la siguiente forma:
+
+cp texto.txt /home/usuario/carpeta_de_destino/texto_copia.txt 
