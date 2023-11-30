@@ -7,17 +7,20 @@
 #===============================
 
 #================================================
-# Importar numpy, matplotlib, mpl_toolkits, time
+# Importar módulos necesarios
 #================================================
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 import time
+from numba import jit
 
-#========================================
-# Parámetros que se pueden cambiar
-#========================================
+
+#==========================
+# Parámetros de entrada
+#==========================
+#----------------------------------------
 # Número de celdas
 n = np.array([512,512])
 # Tamaño del dominio (menor que uno)
@@ -25,11 +28,13 @@ L = np.array([1.0,1.0])
 # Constante de difusión
 k = 0.2
 # Pasos de tiempo
-pasos = 100
+pasos = 1000
+#-----------------------------------------
 
-#===============================================
-# Parámetros secundarios (no se deben cmabiar)
-#===============================================
+#===========================
+# Parámetros secundarios
+#===========================
+
 # Tamaño de las celdas
 dx = L/n
 udx2 = 1.0/(dx*dx)
@@ -49,8 +54,13 @@ un = np.zeros(nt, dtype=np.float64) # arreglo de escritura
 
 #==============================================================
 # Evolución temporal de la ecuación diferencial parcial
-# u_t = k*lapñaciano(u)  (ecuación de difusión de calor)
+# u_t = k*laplaciano(u)  (ecuación de difusión de calor)
 #==============================================================
+
+#=================================
+# Función sin intérprete de python
+#=================================
+@jit(nopython= True)
 def evolucion(u,n,udx2,dt,i,k):
     jpl = i + n[0]
     jml = i - n[0]
@@ -58,10 +68,10 @@ def evolucion(u,n,udx2,dt,i,k):
     unueva = u[i] + dt*k*laplaciano
     return unueva
 
-#================================================================
-# Loop sobre toda la malla para avanzar la ecuación en el tiempo
-# No xontiene la frontera (u=0 en toda la orilla del dominio)
-#================================================================
+#==========================================
+# Loop acelerado sin intérprete de python
+#==========================================
+@jit(nopython=True)
 def solucion (u, un, udx2, dt, n, k):
     for jj in range(1,n[1]-1):
         for ii in range(1,n[0]-1):
@@ -97,7 +107,7 @@ for t in range(1,pasos+1):
     #=============================================
     # Avisar en pantalla el paso en el que va
     #=============================================
-    if t%10 == 0: print("Iteración = ",t)
+    if t%100 == 0: print("Iteración = ",t)
 
 
 end = time.time()
