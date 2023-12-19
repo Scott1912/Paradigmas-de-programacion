@@ -92,4 +92,14 @@ if __name__ == "__main__":
     # Tambien se puede sin decir el tipo de dato pero deben
     # coincidir el tipo de arreglos a los extremos del mensaje
     #=========================================================
+    # EJEMPLO 2 USANDO FLOTANTES
+    #==============================
+    if rank == 0:
+        data = numpy.arange(10, dtype=numpy.float64)
+        comm.Send(data, dest=1, tag=13)
+    elif rank == 1:
+        data = numpy.empty(10, dtype=numpy.float64)
+        comm.Recv(data, source=0, tag=13)
+        print(data)
+
 
