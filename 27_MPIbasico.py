@@ -31,7 +31,7 @@ n_procesos = comunicadores.Get_size()
 #========================================
 quien_soy = comunicadores.Get_rank()
 
-print("Saludos desde el proceso ", str(quien_soyJ), "de ", str(n_procesos))
+print("Saludos desde el proceso ", str(quien_soy), "de ", str(n_procesos))
 
 #=============================
 # Si yo soy el cero hago esto

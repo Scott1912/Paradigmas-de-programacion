@@ -79,7 +79,7 @@ if __name__ == "__main__":
         #================================
         # Arreglo de enteros del 0 al 9
         #================================
-        dato = numpy.arange(10, dtype='i')
+        data = numpy.arange(10, dtype='i')
         #================================================
         # Envío bloqueante especificando el tipo de dato
         #================================================
