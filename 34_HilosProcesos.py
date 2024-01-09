@@ -38,12 +38,48 @@ print("Número de procesadores: ", cpus)
 #==============================
 for i in range(cpus):
     print("registrando el hilo %d" % i)
+    threads.append(Thread(target=calc))
 
-#==============================
+start = time.time()
+#=========================================
+# Iniciar todos los hilos (son seriales)
+#=========================================
+for thread in threads:
+    thread.start()
+
+#=================================
+# Esperar a que termine los hilos
+#=================================
+for thread in threads:
+    thread.join()
+
+end = time.time()
+#=====================
+# Restar los tiempos
+#=====================
+print("Se tardó: ",end-start)
+
+#===================
+# Lista de procesos
+#===================
+procesos = []
 for i in range(cpus):
-    print("registrando el hilo %d" % 
-            #==============================
-            for i in range(cpus):
-            print("registrando el hilo %d" % i)
-            i)
+    print("registrando el proceso %d" % i)
+    procesos.append(Process(target=calc))
 
+start = time.time()
+
+#================================
+# Iniciar procesos (en paralelo)
+#================================
+for proceso in procesos:
+    proceso.start()
+
+#===================
+# Terminar procesos
+#===================
+for proceso in procesos:
+    proceso.join()
+
+end = time.time()
+print("Se tardó: ", end-start)
