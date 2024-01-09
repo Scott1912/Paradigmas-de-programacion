@@ -61,5 +61,5 @@ out = np.zeros(hilosporbloque*bloques, dtype=np.float64)
 #======================================
 # Correr en paralelo el kernel de cuda
 #======================================
-calcularpi_kenel[bloques, hilosporbloque](rng_states, 100000, out)
-print('pi: 'out_mean())
+calcularpi_kernel[bloques, hilosporbloque](rng_states, 100000, out)
+print('pi: ',out.mean())

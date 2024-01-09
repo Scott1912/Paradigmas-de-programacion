@@ -98,7 +98,7 @@ un_d = cuda.to_device(un)
 # Integrar en el tiempo
 #==========================
 for t in range(1,pasos+1):
-    soluciion_kernel[griddim,blockdim](u_d,un_d,udx2[0],udx2[1],dt,n[0],n[1],kd)
+    solucion_kernel[griddim,blockdim](u_d,un_d,udx2[0],udx2[1],dt,n[0],n[1],kd)
     #================================
     # Copiar arreglo dentro del GPU
     #================================
